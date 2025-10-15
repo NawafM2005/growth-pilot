@@ -58,7 +58,7 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-24 bg-gradient-to-b from-black/50 to-gp-bg relative">
+    <section id="pricing" className="py-24 bg-gray-50 relative">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -88,8 +88,8 @@ export function Pricing() {
               <Card
                 className={`h-full relative ${
                   plan.featured
-                    ? 'bg-card border-gp-accent shadow-glow'
-                    : 'bg-card border-border hover:border-gp-accent/50'
+                    ? 'bg-white border-2 border-gp-accent shadow-card'
+                    : 'bg-white border-2 border-border hover:border-gp-accent'
                 } transition-all`}
               >
                 {plan.featured && (

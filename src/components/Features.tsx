@@ -37,9 +37,9 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="py-24 bg-gp-bg relative overflow-hidden">
+    <section id="features" className="py-24 bg-white relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gp-accent rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gp-link rounded-full blur-3xl" />
       </div>
@@ -69,7 +69,7 @@ export function Features() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="bg-card border-border hover:border-gp-accent/50 transition-all hover:shadow-glow h-full group">
+              <Card className="bg-white border-2 border-border hover:border-gp-accent transition-all hover:shadow-card h-full group">
                 <CardContent className="p-8">
                   <div className="w-14 h-14 bg-gp-accent/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gp-accent/20 transition-colors group-hover:scale-110 transform duration-300">
                     <feature.icon className="w-7 h-7 text-gp-accent" />

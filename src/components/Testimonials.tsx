@@ -49,9 +49,9 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 bg-gp-bg relative overflow-hidden">
+    <section id="testimonials" className="py-24 bg-white relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gp-warn rounded-full blur-3xl" />
       </div>
 
@@ -80,7 +80,7 @@ export function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="bg-card border-border hover:border-gp-accent/50 transition-all h-full hover:shadow-glow">
+              <Card className="bg-white border-2 border-border hover:border-gp-accent transition-all h-full hover:shadow-card">
                 <CardContent className="p-6">
                   <Quote className="w-10 h-10 text-gp-accent/30 mb-4" />
                   

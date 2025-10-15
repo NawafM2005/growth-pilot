@@ -51,7 +51,7 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="py-24 bg-gradient-to-b from-gp-bg to-black/50">
+    <section id="faq" className="py-24 bg-gray-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -80,7 +80,7 @@ export function FAQ() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card border border-border rounded-xl px-6 hover:border-gp-accent/50 transition-colors"
+                className="bg-white border-2 border-border rounded-xl px-6 hover:border-gp-accent transition-colors"
               >
                 <AccordionTrigger className="text-left font-semibold hover:text-gp-accent">
                   {faq.question}

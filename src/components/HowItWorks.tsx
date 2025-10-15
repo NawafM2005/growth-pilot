@@ -25,7 +25,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 bg-gp-bg relative">
+    <section id="how-it-works" className="py-24 bg-white relative">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ export function HowItWorks() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="bg-card border-border hover:border-gp-accent/50 transition-all hover:shadow-glow h-full">
+              <Card className="bg-white border-2 border-border hover:border-gp-accent transition-all hover:shadow-card h-full">
                 <CardContent className="p-8">
                   <div className="mb-6">
                     <div className="w-16 h-16 bg-gp-accent/10 rounded-2xl flex items-center justify-center mb-4">
@@ -76,7 +76,7 @@ export function HowItWorks() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="max-w-4xl mx-auto"
         >
-          <Card className="bg-card border-gp-accent/30 shadow-glow">
+          <Card className="bg-white border-2 border-gp-accent/30 shadow-card">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-8 text-center">Smart Rating Router</h3>
               

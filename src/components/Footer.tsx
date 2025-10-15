@@ -5,7 +5,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black/50 border-t border-border py-12">
+    <footer className="bg-gray-50 border-t border-border py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
@@ -59,28 +59,28 @@ export function Footer() {
           <div className="flex gap-4">
             <a
               href="#"
-              className="w-10 h-10 bg-card rounded-full flex items-center justify-center hover:bg-gp-accent/20 hover:text-gp-accent transition-all"
+              className="w-10 h-10 bg-white border-2 border-border rounded-full flex items-center justify-center hover:bg-gp-accent hover:text-white hover:border-gp-accent transition-all"
               aria-label="Facebook"
             >
               <Facebook className="w-5 h-5" />
             </a>
             <a
               href="#"
-              className="w-10 h-10 bg-card rounded-full flex items-center justify-center hover:bg-gp-accent/20 hover:text-gp-accent transition-all"
+              className="w-10 h-10 bg-white border-2 border-border rounded-full flex items-center justify-center hover:bg-gp-accent hover:text-white hover:border-gp-accent transition-all"
               aria-label="Twitter"
             >
               <Twitter className="w-5 h-5" />
             </a>
             <a
               href="#"
-              className="w-10 h-10 bg-card rounded-full flex items-center justify-center hover:bg-gp-accent/20 hover:text-gp-accent transition-all"
+              className="w-10 h-10 bg-white border-2 border-border rounded-full flex items-center justify-center hover:bg-gp-accent hover:text-white hover:border-gp-accent transition-all"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
             </a>
             <a
               href="#"
-              className="w-10 h-10 bg-card rounded-full flex items-center justify-center hover:bg-gp-accent/20 hover:text-gp-accent transition-all"
+              className="w-10 h-10 bg-white border-2 border-border rounded-full flex items-center justify-center hover:bg-gp-accent hover:text-white hover:border-gp-accent transition-all"
               aria-label="Instagram"
             >
               <Instagram className="w-5 h-5" />

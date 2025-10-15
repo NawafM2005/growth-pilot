@@ -31,9 +31,9 @@ export default function Book() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-hero">
+    <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="border-b border-border bg-gp-bg/80 backdrop-blur-md">
+      <header className="border-b border-border bg-white backdrop-blur-md">
         <div className="container mx-auto px-4 py-4">
           <Button
             onClick={() => navigate('/')}
@@ -69,7 +69,7 @@ export default function Book() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Card className="bg-card border-border h-full">
+              <Card className="bg-white border-2 border-border h-full shadow-card">
                 <CardContent className="p-2">
                   {/* Calendly placeholder - replace with actual embed */}
                   <div className="aspect-[9/16] bg-gradient-to-br from-gp-accent/20 to-gp-link/20 rounded-lg flex items-center justify-center">
@@ -105,7 +105,7 @@ export default function Book() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="space-y-6"
             >
-              <Card className="bg-card border-border">
+              <Card className="bg-white border-2 border-border shadow-card">
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-bold mb-6">What You'll Get</h2>
                   <div className="space-y-6">
@@ -124,7 +124,7 @@ export default function Book() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-accent border-none">
+              <Card className="bg-gradient-accent border-none shadow-card">
                 <CardContent className="p-8 text-center">
                   <h3 className="text-2xl font-bold mb-4">Can't Find a Time?</h3>
                   <p className="text-white/90 mb-6">
@@ -148,7 +148,7 @@ export default function Book() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-card border-border">
+              <Card className="bg-white border-2 border-border shadow-card">
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-3">Trusted by 500+ Businesses</h3>
                   <div className="grid grid-cols-3 gap-4 text-center text-sm">

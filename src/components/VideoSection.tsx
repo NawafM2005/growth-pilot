@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card';
 
 export function VideoSection() {
   return (
-    <section id="video" className="py-24 bg-gradient-to-b from-gp-bg to-black/50">
+    <section id="video" className="py-24 bg-gray-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ export function VideoSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-5xl mx-auto"
         >
-          <Card className="bg-card border-gp-accent/30 overflow-hidden shadow-glow">
+          <Card className="bg-white border-2 border-gp-accent/30 overflow-hidden shadow-card">
             <div className="relative aspect-video bg-gradient-to-br from-gp-accent/20 to-gp-link/20">
               {/* Placeholder for video - replace with actual embed */}
               <div className="absolute inset-0 flex items-center justify-center">
@@ -71,7 +71,7 @@ export function VideoSection() {
             ].map((highlight, index) => (
               <div
                 key={index}
-                className="text-center p-4 bg-card/50 rounded-xl border border-border hover:border-gp-accent/50 transition-colors"
+                className="text-center p-4 bg-white rounded-xl border-2 border-border hover:border-gp-accent transition-colors"
               >
                 <div className="text-gp-accent font-bold text-lg mb-2">{highlight.time}</div>
                 <div className="font-semibold mb-1">{highlight.title}</div>
