@@ -14,7 +14,165 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      businesses: {
+        Row: {
+          business_name: string
+          created_at: string
+          id: string
+          monthly_cost: number | null
+          next_billing_date: string | null
+          payment_status: string | null
+          plan: string | null
+          status: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          business_name: string
+          created_at?: string
+          id?: string
+          monthly_cost?: number | null
+          next_billing_date?: string | null
+          payment_status?: string | null
+          plan?: string | null
+          status?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          business_name?: string
+          created_at?: string
+          id?: string
+          monthly_cost?: number | null
+          next_billing_date?: string | null
+          payment_status?: string | null
+          plan?: string | null
+          status?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      csv_uploads: {
+        Row: {
+          business_id: string
+          created_at: string
+          file_name: string
+          id: string
+          row_count: number | null
+          status: string | null
+          upload_date: string
+        }
+        Insert: {
+          business_id: string
+          created_at?: string
+          file_name: string
+          id?: string
+          row_count?: number | null
+          status?: string | null
+          upload_date?: string
+        }
+        Update: {
+          business_id?: string
+          created_at?: string
+          file_name?: string
+          id?: string
+          row_count?: number | null
+          status?: string | null
+          upload_date?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "csv_uploads_business_id_fkey"
+            columns: ["business_id"]
+            isOneToOne: false
+            referencedRelation: "businesses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      messages: {
+        Row: {
+          business_id: string
+          customer_name: string
+          customer_phone: string | null
+          id: string
+          message_content: string
+          replied_at: string | null
+          reply_content: string | null
+          sent_at: string
+          status: string | null
+        }
+        Insert: {
+          business_id: string
+          customer_name: string
+          customer_phone?: string | null
+          id?: string
+          message_content: string
+          replied_at?: string | null
+          reply_content?: string | null
+          sent_at?: string
+          status?: string | null
+        }
+        Update: {
+          business_id?: string
+          customer_name?: string
+          customer_phone?: string | null
+          id?: string
+          message_content?: string
+          replied_at?: string | null
+          reply_content?: string | null
+          sent_at?: string
+          status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "messages_business_id_fkey"
+            columns: ["business_id"]
+            isOneToOne: false
+            referencedRelation: "businesses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      reviews: {
+        Row: {
+          business_id: string
+          comment: string | null
+          created_at: string
+          customer_name: string
+          id: string
+          rating: number
+          review_type: string
+        }
+        Insert: {
+          business_id: string
+          comment?: string | null
+          created_at?: string
+          customer_name: string
+          id?: string
+          rating: number
+          review_type: string
+        }
+        Update: {
+          business_id?: string
+          comment?: string | null
+          created_at?: string
+          customer_name?: string
+          id?: string
+          rating?: number
+          review_type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "reviews_business_id_fkey"
+            columns: ["business_id"]
+            isOneToOne: false
+            referencedRelation: "businesses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never

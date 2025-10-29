@@ -79,6 +79,30 @@ export function Hero() {
               </Button>
             </motion.div>
 
+            {/* Login Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-4"
+            >
+              <Button
+                onClick={() => window.location.href = '/dashboard'}
+                variant="ghost"
+                className="text-foreground hover:text-gp-accent font-medium"
+              >
+                Owner Login
+              </Button>
+              <span className="text-muted-foreground">|</span>
+              <Button
+                onClick={() => window.location.href = '/admin'}
+                variant="ghost"
+                className="text-foreground hover:text-gp-accent font-medium"
+              >
+                Admin Login
+              </Button>
+            </motion.div>
+
             {/* Trust indicators */}
             <motion.div
               initial={{ opacity: 0 }}
