@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -33,6 +34,7 @@ interface Stats {
 }
 
 const OwnerDashboard = () => {
+  const navigate = useNavigate();
   const [file, setFile] = useState<File | null>(null);
   const [csvUploads, setCsvUploads] = useState<CsvUpload[]>([]);
   const [goodReviews, setGoodReviews] = useState<Review[]>([]);
@@ -46,8 +48,28 @@ const OwnerDashboard = () => {
   const [businessId, setBusinessId] = useState<string | null>(null);
 
   useEffect(() => {
+    checkAuth();
     fetchBusinessData();
   }, []);
+
+  const checkAuth = async () => {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) {
+      navigate('/owner-login');
+      return;
+    }
+
+    const { data: roleData } = await supabase
+      .from('user_roles')
+      .select('role')
+      .eq('user_id', session.user.id)
+      .eq('role', 'owner')
+      .single();
+
+    if (!roleData) {
+      navigate('/owner-login');
+    }
+  };
 
   const fetchBusinessData = async () => {
     // Fetch or create business for current user

@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import Book from "./pages/Book";
 import OwnerDashboard from "./pages/OwnerDashboard";
 import AdminPanel from "./pages/AdminPanel";
+import AdminLogin from "./pages/AdminLogin";
+import OwnerLogin from "./pages/OwnerLogin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +22,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/book" element={<Book />} />
+          <Route path="/owner-login" element={<OwnerLogin />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/dashboard" element={<OwnerDashboard />} />
           <Route path="/admin" element={<AdminPanel />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

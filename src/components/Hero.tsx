@@ -87,7 +87,7 @@ export function Hero() {
               className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-4"
             >
               <Button
-                onClick={() => window.location.href = '/dashboard'}
+                onClick={() => window.location.href = '/owner-login'}
                 variant="ghost"
                 className="text-foreground hover:text-gp-accent font-medium"
               >
@@ -95,7 +95,7 @@ export function Hero() {
               </Button>
               <span className="text-muted-foreground">|</span>
               <Button
-                onClick={() => window.location.href = '/admin'}
+                onClick={() => window.location.href = '/admin-login'}
                 variant="ghost"
                 className="text-foreground hover:text-gp-accent font-medium"
               >

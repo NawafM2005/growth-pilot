@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -7,10 +8,18 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
-import { Building2, Star, Send, PlayCircle, FileText, MessageCircle } from 'lucide-react';
+import { Label } from '@/components/ui/label';
+import { Building2, Star, Send, PlayCircle, FileText, MessageCircle, Plus } from 'lucide-react';
 import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
 import { format } from 'date-fns';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 
 interface Business {
   id: string;
@@ -46,6 +55,7 @@ interface Message {
 }
 
 const AdminPanel = () => {
+  const navigate = useNavigate();
   const [businesses, setBusinesses] = useState<Business[]>([]);
   const [selectedBusiness, setSelectedBusiness] = useState<Business | null>(null);
   const [goodReviews, setGoodReviews] = useState<Review[]>([]);
@@ -54,12 +64,36 @@ const AdminPanel = () => {
   const [selectedMessage, setSelectedMessage] = useState<Message | null>(null);
   const [replyText, setReplyText] = useState('');
   const [csvUploads, setCsvUploads] = useState<any[]>([]);
+  const [createDialogOpen, setCreateDialogOpen] = useState(false);
+  const [newBusinessEmail, setNewBusinessEmail] = useState('');
+  const [newBusinessPassword, setNewBusinessPassword] = useState('');
+  const [newBusinessName, setNewBusinessName] = useState('');
 
   useEffect(() => {
+    checkAuth();
     fetchBusinesses();
     fetchReviews();
     fetchMessages();
   }, []);
+
+  const checkAuth = async () => {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) {
+      navigate('/admin-login');
+      return;
+    }
+
+    const { data: roleData } = await supabase
+      .from('user_roles')
+      .select('role')
+      .eq('user_id', session.user.id)
+      .eq('role', 'admin')
+      .single();
+
+    if (!roleData) {
+      navigate('/admin-login');
+    }
+  };
 
   const fetchBusinesses = async () => {
     const { data } = await supabase
@@ -130,13 +164,115 @@ const AdminPanel = () => {
     toast.success('Outreach script triggered for business');
   };
 
+  const handleCreateBusiness = async () => {
+    try {
+      // Create auth user
+      const { data: authData, error: authError } = await supabase.auth.signUp({
+        email: newBusinessEmail,
+        password: newBusinessPassword,
+        options: {
+          emailRedirectTo: `${window.location.origin}/dashboard`
+        }
+      });
+
+      if (authError) throw authError;
+
+      if (authData.user) {
+        // Create owner role
+        const { error: roleError } = await supabase
+          .from('user_roles')
+          .insert({ user_id: authData.user.id, role: 'owner' });
+
+        if (roleError) throw roleError;
+
+        // Create business
+        const { error: businessError } = await supabase
+          .from('businesses')
+          .insert({
+            user_id: authData.user.id,
+            business_name: newBusinessName,
+            status: 'active',
+            plan: 'Pro Plan',
+            payment_status: 'pending',
+            monthly_cost: 99.00
+          });
+
+        if (businessError) throw businessError;
+
+        toast.success('Business created successfully!');
+        setCreateDialogOpen(false);
+        setNewBusinessEmail('');
+        setNewBusinessPassword('');
+        setNewBusinessName('');
+        fetchBusinesses();
+      }
+    } catch (error: any) {
+      toast.error(error.message || 'Failed to create business');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="container mx-auto px-4 py-8 mt-20">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-foreground mb-2">Admin Panel</h1>
-          <p className="text-muted-foreground">Manage businesses, reviews, and messages</p>
+        <div className="mb-8 flex items-center justify-between">
+          <div>
+            <h1 className="text-4xl font-bold text-foreground mb-2">Admin Panel</h1>
+            <p className="text-muted-foreground">Manage businesses, reviews, and messages</p>
+          </div>
+          <Dialog open={createDialogOpen} onOpenChange={setCreateDialogOpen}>
+            <DialogTrigger asChild>
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                <Plus className="w-4 h-4 mr-2" />
+                Create Business
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="bg-card border-2 border-border">
+              <DialogHeader>
+                <DialogTitle className="text-foreground">Create New Business</DialogTitle>
+              </DialogHeader>
+              <div className="space-y-4 mt-4">
+                <div>
+                  <Label htmlFor="business-name">Business Name</Label>
+                  <Input
+                    id="business-name"
+                    value={newBusinessName}
+                    onChange={(e) => setNewBusinessName(e.target.value)}
+                    placeholder="Enter business name"
+                    className="bg-background border-border text-foreground"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="owner-email">Owner Email</Label>
+                  <Input
+                    id="owner-email"
+                    type="email"
+                    value={newBusinessEmail}
+                    onChange={(e) => setNewBusinessEmail(e.target.value)}
+                    placeholder="owner@business.com"
+                    className="bg-background border-border text-foreground"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="owner-password">Owner Password</Label>
+                  <Input
+                    id="owner-password"
+                    type="password"
+                    value={newBusinessPassword}
+                    onChange={(e) => setNewBusinessPassword(e.target.value)}
+                    placeholder="••••••••"
+                    className="bg-background border-border text-foreground"
+                  />
+                </div>
+                <Button
+                  onClick={handleCreateBusiness}
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                >
+                  Create Business
+                </Button>
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
 
         <Tabs defaultValue="businesses" className="space-y-6">
