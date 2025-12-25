@@ -6,50 +6,50 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 const plans = [
   {
     name: 'Starter',
-    price: '$49',
-    period: '/month',
-    description: 'Perfect for small businesses getting started',
+    price: '$1,500',
+    period: 'one-time',
+    description: 'Perfect for small businesses needing a simple website',
     features: [
-      'Up to 100 review requests/month',
-      'Automated SMS/Email sequences',
-      'Basic sentiment analysis',
-      'Google Sheets export',
-      'Email support',
+      'Up to 5 pages',
+      'Responsive design',
+      'Contact form',
+      'Basic SEO setup',
+      '1 month support',
     ],
-    cta: 'Start Free Trial',
+    cta: 'Get Started',
     featured: false,
   },
   {
-    name: 'Pro',
-    price: '$99',
-    period: '/month',
-    description: 'For growing businesses scaling reputation',
+    name: 'Professional',
+    price: '$3,500',
+    period: 'one-time',
+    description: 'For businesses needing more features and functionality',
     features: [
-      'Up to 500 review requests/month',
-      'Advanced AI feedback scoring',
-      'Custom review links',
-      'Priority support',
-      'Advanced analytics dashboard',
-      'CRM integrations',
-      'White-label options',
+      'Up to 15 pages',
+      'Custom design',
+      'Database integration',
+      'Google Calendar booking',
+      'Advanced SEO',
+      'CMS for easy updates',
+      '3 months support',
     ],
-    cta: 'Start Free Trial',
+    cta: 'Get Started',
     featured: true,
   },
   {
-    name: 'Business',
-    price: '$199',
-    period: '/month',
-    description: 'For enterprises with multiple locations',
+    name: 'Enterprise',
+    price: 'Custom',
+    period: 'quote',
+    description: 'Full-scale web applications with complex requirements',
     features: [
-      'Unlimited review requests',
-      'Multi-location management',
-      'Dedicated account manager',
+      'Unlimited pages',
+      'Advanced database systems',
       'Custom integrations',
-      'API access',
-      'Advanced reporting',
-      'Phone support',
-      'SLA guarantee',
+      'E-commerce capabilities',
+      'User authentication',
+      'API development',
+      'Priority support',
+      'Dedicated project manager',
     ],
     cta: 'Book a Call',
     featured: false,
@@ -58,7 +58,7 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-24 bg-gray-50 relative">
+    <section id="pricing" className="py-24 bg-secondary/30 relative">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -71,7 +71,7 @@ export function Pricing() {
             Simple, <span className="text-gp-accent">Transparent</span> Pricing
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Choose the perfect plan for your business. All plans include a 14-day free trial.
+            Choose the package that fits your needs. All projects include free consultations.
           </p>
         </motion.div>
 
@@ -88,8 +88,8 @@ export function Pricing() {
               <Card
                 className={`h-full relative ${
                   plan.featured
-                    ? 'bg-white border-2 border-gp-accent shadow-card'
-                    : 'bg-white border-2 border-border hover:border-gp-accent'
+                    ? 'bg-card border-2 border-gp-accent shadow-card'
+                    : 'bg-card border-2 border-border hover:border-gp-accent'
                 } transition-all`}
               >
                 {plan.featured && (
@@ -105,7 +105,7 @@ export function Pricing() {
                   <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                   <div className="mb-4">
                     <span className="text-5xl font-bold">{plan.price}</span>
-                    <span className="text-muted-foreground">{plan.period}</span>
+                    <span className="text-muted-foreground"> {plan.period}</span>
                   </div>
                   <p className="text-muted-foreground">{plan.description}</p>
                 </CardHeader>
@@ -135,7 +135,7 @@ export function Pricing() {
           ))}
         </div>
 
-        {/* Money-back guarantee */}
+        {/* Additional info */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -144,7 +144,7 @@ export function Pricing() {
           className="text-center mt-12 text-muted-foreground"
         >
           <p className="text-lg">
-            ✓ 14-day free trial &nbsp;•&nbsp; ✓ No credit card required &nbsp;•&nbsp; ✓ Cancel anytime
+            ✓ Free consultation &nbsp;•&nbsp; ✓ No hidden fees &nbsp;•&nbsp; ✓ 100% satisfaction guaranteed
           </p>
         </motion.div>
       </div>

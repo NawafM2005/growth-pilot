@@ -1,43 +1,43 @@
 import { motion } from 'framer-motion';
-import { Brain, FileSpreadsheet, Link as LinkIcon, Zap, Shield, BarChart } from 'lucide-react';
+import { Code, Database, Calendar, Palette, Smartphone, Zap } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const features = [
   {
-    icon: Brain,
-    title: 'AI Sentiment Analysis',
-    description: 'Advanced AI automatically detects customer satisfaction levels and sentiment in feedback responses.',
+    icon: Palette,
+    title: 'Custom Design',
+    description: 'Unique, modern designs tailored to your brand identity. No templates—every site is built from scratch.',
   },
   {
-    icon: FileSpreadsheet,
-    title: 'Google Sheets Export',
-    description: 'Low ratings are automatically exported to Google Sheets for easy team review and follow-up.',
+    icon: Database,
+    title: 'Database Integration',
+    description: 'Need to store data? We integrate powerful databases to manage your content, users, and business logic.',
   },
   {
-    icon: LinkIcon,
-    title: 'Smart Review Routing',
-    description: 'Happy customers (4-5 stars) get direct links to your Google Business Profile for instant reviews.',
+    icon: Calendar,
+    title: 'Booking & Calendar Sync',
+    description: 'Built-in booking systems that sync directly with Google Calendar. Let customers schedule appointments seamlessly.',
+  },
+  {
+    icon: Smartphone,
+    title: 'Fully Responsive',
+    description: 'Your website looks perfect on every device—desktop, tablet, and mobile. No compromise on user experience.',
   },
   {
     icon: Zap,
-    title: 'Automated Follow-ups',
-    description: 'Set up automated reminder sequences to boost response rates without manual effort.',
+    title: 'Lightning Fast',
+    description: 'Optimized performance with fast load times. Keep visitors engaged with a smooth, snappy experience.',
   },
   {
-    icon: Shield,
-    title: 'Privacy & Compliance',
-    description: 'GDPR and privacy-compliant with secure data handling. Customers control their data.',
-  },
-  {
-    icon: BarChart,
-    title: 'Real-time Analytics',
-    description: 'Track review collection performance with detailed dashboards and actionable insights.',
+    icon: Code,
+    title: 'Clean, Modern Code',
+    description: 'Built with the latest technologies. Easy to maintain, update, and scale as your business grows.',
   },
 ];
 
 export function Features() {
   return (
-    <section id="features" className="py-24 bg-white relative overflow-hidden">
+    <section id="features" className="py-24 bg-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gp-accent rounded-full blur-3xl" />
@@ -53,10 +53,10 @@ export function Features() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Powerful <span className="text-gp-accent">Features</span> for Growth
+            What We <span className="text-gp-accent">Build</span> For You
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Everything you need to automate review collection and protect your online reputation
+            Everything you need for a professional online presence, tailored to your specific requirements
           </p>
         </motion.div>
 
@@ -69,7 +69,7 @@ export function Features() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="bg-white border-2 border-border hover:border-gp-accent transition-all hover:shadow-card h-full group">
+              <Card className="bg-card border-2 border-border hover:border-gp-accent transition-all hover:shadow-card h-full group">
                 <CardContent className="p-8">
                   <div className="w-14 h-14 bg-gp-accent/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gp-accent/20 transition-colors group-hover:scale-110 transform duration-300">
                     <feature.icon className="w-7 h-7 text-gp-accent" />
@@ -97,23 +97,23 @@ export function Features() {
           <Card className="bg-gradient-accent border-none shadow-glow max-w-4xl mx-auto">
             <CardContent className="p-8 md:p-12">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Trusted by Leading Local Businesses
+                Trusted by Businesses Across Industries
               </h3>
               <p className="text-lg text-white/90 mb-8">
-                Join hundreds of businesses already growing their online reputation with GrowthPilot
+                From startups to established businesses, we deliver websites that drive results
               </p>
               <div className="grid md:grid-cols-3 gap-8 text-center">
                 <div>
-                  <div className="text-4xl font-bold mb-2">500+</div>
-                  <div className="text-white/80">Active Businesses</div>
+                  <div className="text-4xl font-bold mb-2">100+</div>
+                  <div className="text-white/80">Websites Delivered</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold mb-2">50K+</div>
-                  <div className="text-white/80">Reviews Collected</div>
+                  <div className="text-4xl font-bold mb-2">50+</div>
+                  <div className="text-white/80">Happy Clients</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold mb-2">4.8★</div>
-                  <div className="text-white/80">Average Rating Increase</div>
+                  <div className="text-4xl font-bold mb-2">5★</div>
+                  <div className="text-white/80">Client Satisfaction</div>
                 </div>
               </div>
             </CardContent>

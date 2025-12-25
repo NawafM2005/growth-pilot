@@ -5,12 +5,11 @@ import { Menu, X } from 'lucide-react';
 
 const navigation = [
   { name: 'Home', href: '#home' },
-  { name: 'How It Works', href: '#how-it-works' },
-  { name: 'Video', href: '#video' },
-  { name: 'Features', href: '#features' },
+  { name: 'Process', href: '#how-it-works' },
+  { name: 'Services', href: '#features' },
   { name: 'Pricing', href: '#pricing' },
-  { name: 'FAQ', href: '#faq' },
   { name: 'Testimonials', href: '#testimonials' },
+  { name: 'FAQ', href: '#faq' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -40,7 +39,7 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-border' : 'bg-white border-b border-border'
+        isScrolled ? 'bg-background/95 backdrop-blur-md shadow-lg border-b border-border' : 'bg-background border-b border-border'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -50,7 +49,7 @@ export function Navbar() {
             to="/"
             className="text-2xl font-bold text-gp-accent hover:opacity-80 transition-opacity"
           >
-            GrowthPilot
+            WebCraft
           </Link>
 
           {/* Desktop Navigation */}
@@ -59,7 +58,7 @@ export function Navbar() {
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
-                className="px-3 py-2 text-sm font-medium text-gp-text hover:text-gp-accent transition-colors rounded-lg hover:bg-white/5"
+                className="px-3 py-2 text-sm font-medium text-foreground hover:text-gp-accent transition-colors rounded-lg hover:bg-secondary/50"
               >
                 {item.name}
               </button>
@@ -72,14 +71,14 @@ export function Navbar() {
               onClick={() => navigate('/book')}
               className="bg-gp-accent hover:bg-gp-accent/90 text-white font-semibold px-6 py-2 rounded-2xl shadow-glow transition-all hover:scale-105"
             >
-              Book a Meeting
+              Book a Consultation
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-gp-text hover:text-gp-accent transition-colors"
+            className="md:hidden p-2 text-foreground hover:text-gp-accent transition-colors"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -93,7 +92,7 @@ export function Navbar() {
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
-                className="block w-full text-left px-4 py-2 text-sm font-medium text-gp-text hover:text-gp-accent hover:bg-white/5 transition-colors"
+                className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:text-gp-accent hover:bg-secondary/50 transition-colors"
               >
                 {item.name}
               </button>
@@ -106,7 +105,7 @@ export function Navbar() {
                 }}
                 className="w-full bg-gp-accent hover:bg-gp-accent/90 text-white font-semibold py-2 rounded-2xl"
               >
-                Book a Meeting
+                Book a Consultation
               </Button>
             </div>
           </div>
