@@ -11,7 +11,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" className="text-2xl font-bold text-primary mb-4 block">
-              WebCraft
+              Growth Pilot
             </Link>
             <p className="text-muted-foreground text-sm">
               Custom websites built to your preferences. Database integration and Google Calendar booking included.
@@ -25,7 +25,6 @@ export function Footer() {
               <li><a href="#features" className="hover:text-primary transition-colors">Custom Websites</a></li>
               <li><a href="#features" className="hover:text-primary transition-colors">Database Integration</a></li>
               <li><a href="#features" className="hover:text-primary transition-colors">Booking Systems</a></li>
-              <li><a href="#pricing" className="hover:text-primary transition-colors">Pricing</a></li>
             </ul>
           </div>
 
@@ -34,7 +33,6 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-foreground">Company</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="#how-it-works" className="hover:text-primary transition-colors">Our Process</a></li>
-              <li><a href="#testimonials" className="hover:text-primary transition-colors">Testimonials</a></li>
               <li><Link to="/book" className="hover:text-primary transition-colors">Book a Consultation</Link></li>
               <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
             </ul>
@@ -53,7 +51,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} WebCraft. All rights reserved.
+            © {currentYear} Growth Pilot. All rights reserved.
           </p>
 
           {/* Social links */}

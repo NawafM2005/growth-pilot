@@ -7,8 +7,6 @@ const navigation = [
   { name: 'Home', href: '#home' },
   { name: 'Process', href: '#how-it-works' },
   { name: 'Services', href: '#features' },
-  { name: 'Pricing', href: '#pricing' },
-  { name: 'Testimonials', href: '#testimonials' },
   { name: 'FAQ', href: '#faq' },
   { name: 'Contact', href: '#contact' },
 ];
@@ -51,7 +49,7 @@ export function Navbar() {
             to="/"
             className="text-2xl font-bold text-primary hover:opacity-80 transition-opacity"
           >
-            WebCraft
+            Growth Pilot
           </Link>
 
           {/* Desktop Navigation */}

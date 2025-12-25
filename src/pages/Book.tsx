@@ -31,14 +31,14 @@ export default function Book() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b border-border bg-white backdrop-blur-md">
+      <header className="border-b border-border bg-card/80 backdrop-blur-md sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <Button
             onClick={() => navigate('/')}
             variant="ghost"
-            className="text-gp-text hover:text-gp-accent"
+            className="text-foreground hover:text-primary hover:bg-primary/10 transition-colors"
           >
             <ArrowLeft className="mr-2 w-4 h-4" />
             Back to Home
@@ -124,23 +124,23 @@ export default function Book() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-accent border-none shadow-card">
+              <Card className="bg-gradient-accent border-none shadow-card text-white">
                 <CardContent className="p-8 text-center">
-                  <h3 className="text-2xl font-bold mb-4">Can't Find a Time?</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-white">Can't Find a Time?</h3>
                   <p className="text-white/90 mb-6">
                     Reach out directly and we'll find a time that works for you
                   </p>
                   <div className="space-y-3">
                     <Button
                       onClick={() => window.location.href = 'mailto:hello@growthpilot.com'}
-                      className="w-full bg-white text-gp-accent hover:bg-white/90 font-semibold py-6 rounded-2xl"
+                      className="w-full bg-white text-primary hover:bg-white/90 font-bold py-6 rounded-xl shadow-lg transition-transform hover:scale-[1.02]"
                     >
                       Email Us: hello@growthpilot.com
                     </Button>
                     <Button
                       onClick={() => window.location.href = 'tel:+15551234567'}
                       variant="outline"
-                      className="w-full border-2 border-white text-white hover:bg-white hover:text-gp-accent font-semibold py-6 rounded-2xl"
+                      className="w-full border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary font-bold py-6 rounded-xl transition-all hover:scale-[1.02]"
                     >
                       Call Us: +1 (555) 123-4567
                     </Button>
@@ -150,21 +150,10 @@ export default function Book() {
 
               <Card className="bg-white border-2 border-border shadow-card">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold mb-3">Trusted by 500+ Businesses</h3>
-                  <div className="grid grid-cols-3 gap-4 text-center text-sm">
-                    <div>
-                      <div className="text-2xl font-bold text-gp-accent mb-1">4.9★</div>
-                      <div className="text-muted-foreground">Avg Rating</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-gp-accent mb-1">50K+</div>
-                      <div className="text-muted-foreground">Reviews</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-gp-accent mb-1">98%</div>
-                      <div className="text-muted-foreground">Satisfied</div>
-                    </div>
-                  </div>
+                  <h3 className="font-semibold mb-3">Why Choose Us?</h3>
+                  <p className="text-muted-foreground text-sm">
+                    We deliver high-quality, custom-built websites tailored to your specific business needs. Our focus is on performance, design, and seamless integration.
+                  </p>
                 </CardContent>
               </Card>
             </motion.div>

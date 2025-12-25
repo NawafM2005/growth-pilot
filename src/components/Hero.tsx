@@ -3,8 +3,8 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Code, Sparkles } from 'lucide-react';
 
 export function Hero() {
-  const handleScrollToPricing = () => {
-    const element = document.querySelector('#pricing');
+  const handleScrollToContact = () => {
+    const element = document.querySelector('#contact');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -57,7 +57,7 @@ export function Hero() {
               className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
             >
               <Button
-                onClick={handleScrollToPricing}
+                onClick={handleScrollToContact}
                 size="lg"
                 className="bg-primary hover:bg-gp-accent-hover text-white font-bold px-8 py-6 rounded-xl text-lg shadow-glow transition-all duration-300 hover:scale-105 hover:shadow-hover group"
               >
