@@ -50,6 +50,7 @@ export default {
         'gp-bg': 'hsl(var(--gp-bg))',
         'gp-text': 'hsl(var(--gp-text))',
         'gp-accent': 'hsl(var(--gp-accent))',
+        'gp-accent-hover': 'hsl(var(--gp-accent-hover))',
         'gp-warn': 'hsl(var(--gp-warn))',
         'gp-link': 'hsl(var(--gp-link))',
       },
@@ -60,6 +61,7 @@ export default {
       boxShadow: {
         'glow': 'var(--shadow-glow)',
         'card': 'var(--shadow-card)',
+        'hover': 'var(--shadow-hover)',
       },
       transitionProperty: {
         'smooth': 'var(--transition-smooth)',

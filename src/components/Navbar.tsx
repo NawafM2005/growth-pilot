@@ -39,7 +39,9 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/95 backdrop-blur-md shadow-lg border-b border-border' : 'bg-background border-b border-border'
+        isScrolled 
+          ? 'bg-card/95 backdrop-blur-md shadow-lg border-b border-border' 
+          : 'bg-card border-b border-border'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -47,7 +49,7 @@ export function Navbar() {
           {/* Logo */}
           <Link
             to="/"
-            className="text-2xl font-bold text-gp-accent hover:opacity-80 transition-opacity"
+            className="text-2xl font-bold text-primary hover:opacity-80 transition-opacity"
           >
             WebCraft
           </Link>
@@ -58,7 +60,7 @@ export function Navbar() {
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
-                className="px-3 py-2 text-sm font-medium text-foreground hover:text-gp-accent transition-colors rounded-lg hover:bg-secondary/50"
+                className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200 rounded-lg"
               >
                 {item.name}
               </button>
@@ -69,7 +71,7 @@ export function Navbar() {
           <div className="hidden md:block">
             <Button
               onClick={() => navigate('/book')}
-              className="bg-gp-accent hover:bg-gp-accent/90 text-white font-semibold px-6 py-2 rounded-2xl shadow-glow transition-all hover:scale-105"
+              className="bg-primary hover:bg-gp-accent-hover text-white font-semibold px-6 py-2 rounded-xl shadow-glow transition-all duration-300 hover:scale-105"
             >
               Book a Consultation
             </Button>
@@ -78,7 +80,7 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-foreground hover:text-gp-accent transition-colors"
+            className="md:hidden p-2 text-foreground hover:text-primary hover:bg-primary/10 transition-colors rounded-lg"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -87,12 +89,12 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 space-y-2 bg-card rounded-lg mt-2 shadow-card">
+          <div className="md:hidden py-4 space-y-2 bg-card rounded-lg mt-2 shadow-card border border-border">
             {navigation.map((item) => (
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
-                className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:text-gp-accent hover:bg-secondary/50 transition-colors"
+                className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-primary/10 transition-colors"
               >
                 {item.name}
               </button>
@@ -103,7 +105,7 @@ export function Navbar() {
                   navigate('/book');
                   setIsMobileMenuOpen(false);
                 }}
-                className="w-full bg-gp-accent hover:bg-gp-accent/90 text-white font-semibold py-2 rounded-2xl"
+                className="w-full bg-primary hover:bg-gp-accent-hover text-white font-semibold py-2 rounded-xl"
               >
                 Book a Consultation
               </Button>
