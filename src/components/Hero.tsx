@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Star } from 'lucide-react';
-import heroImage from '@/assets/hero-illustration.jpg';
+import { ArrowRight, Code, Sparkles } from 'lucide-react';
 
 export function Hero() {
   const handleScrollToPricing = () => {
@@ -12,14 +11,11 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-gradient-to-b from-white to-gray-50">
-      {/* Hero image with overlay */}
-      <div className="absolute inset-0 opacity-10">
-        <img
-          src={heroImage}
-          alt="Automated review management"
-          className="w-full h-full object-cover"
-        />
+    <section id="home" className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-gradient-to-b from-background to-secondary/20">
+      {/* Abstract background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gp-accent rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gp-link rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -37,20 +33,20 @@ export function Hero() {
               transition={{ delay: 0.2, duration: 0.4 }}
               className="inline-flex items-center gap-2 px-4 py-2 bg-gp-accent/10 border border-gp-accent/30 rounded-full text-gp-accent text-sm font-medium"
             >
-              <Star className="w-4 h-4 fill-gp-accent" />
-              <span>Trusted by 500+ Local Businesses</span>
+              <Sparkles className="w-4 h-4" />
+              <span>Custom Websites Built for Your Vision</span>
             </motion.div>
 
             {/* Headline */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              Effortlessly Grow Your{' '}
-              <span className="text-gp-accent">Online Reputation</span>{' '}
-              with Automated Google Review Funnels
+              We Build{' '}
+              <span className="text-gp-accent">Beautiful Websites</span>{' '}
+              Tailored to Your Business
             </h1>
 
             {/* Subheadline */}
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-              Collect private feedback, route happy customers to Google, and grow your stars—on autopilot.
+              Custom web development with database integration and booking systems that sync with Google Calendar. Your vision, expertly crafted.
             </p>
 
             {/* CTAs */}
@@ -65,7 +61,7 @@ export function Hero() {
                 size="lg"
                 className="bg-gp-accent hover:bg-gp-accent/90 text-white font-bold px-8 py-6 rounded-2xl text-lg shadow-glow transition-all hover:scale-105 group"
               >
-                Start Free
+                Get a Free Quote
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               
@@ -75,7 +71,7 @@ export function Hero() {
                 variant="outline"
                 className="border-2 border-gp-accent text-gp-accent hover:bg-gp-accent hover:text-white font-bold px-8 py-6 rounded-2xl text-lg transition-all hover:scale-105"
               >
-                Book a Meeting
+                Book a Consultation
               </Button>
             </motion.div>
 
@@ -91,7 +87,7 @@ export function Hero() {
                 variant="ghost"
                 className="text-foreground hover:text-gp-accent font-medium"
               >
-                Owner Login
+                Client Portal
               </Button>
               <span className="text-muted-foreground">|</span>
               <Button
@@ -111,22 +107,18 @@ export function Hero() {
               className="flex flex-wrap justify-center items-center gap-8 pt-12 text-sm text-muted-foreground"
             >
               <div className="flex items-center gap-2">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-gp-warn text-gp-warn" />
-                  ))}
-                </div>
-                <span>4.9/5 from 200+ reviews</span>
+                <Code className="w-5 h-5 text-gp-accent" />
+                <span>100+ Websites Delivered</span>
               </div>
-              <div>✓ No credit card required</div>
-              <div>✓ Free 14-day trial</div>
+              <div>✓ Database Integration</div>
+              <div>✓ Google Calendar Sync</div>
             </motion.div>
           </motion.div>
         </div>
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-secondary/20 to-transparent" />
     </section>
   );
 }

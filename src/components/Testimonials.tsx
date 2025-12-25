@@ -4,52 +4,52 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const testimonials = [
   {
-    name: 'Sarah Johnson',
-    role: 'Owner, Bella Vista Dental',
-    content: 'GrowthPilot transformed our review collection. We went from 3.8 to 4.7 stars in just 3 months. The automated routing is genius!',
+    name: 'Sarah Mitchell',
+    role: 'Owner, Bloom Wellness Studio',
+    content: 'They built exactly what I envisioned. The booking system syncs perfectly with my Google Calendar—clients love how easy it is to schedule appointments!',
     rating: 5,
-    avatar: 'SJ',
+    avatar: 'SM',
   },
   {
-    name: 'Michael Chen',
-    role: 'Manager, Peak Fitness Studio',
-    content: 'Finally, a system that prevents negative reviews from going public while still collecting valuable feedback. ROI was immediate.',
+    name: 'Marcus Rodriguez',
+    role: 'Founder, TechStart Solutions',
+    content: 'The database integration was seamless. Our internal tools now run on a custom web app that saves us hours every week. Highly professional team.',
     rating: 5,
-    avatar: 'MC',
+    avatar: 'MR',
   },
   {
-    name: 'Emily Rodriguez',
-    role: 'Director, Sunrise Auto Repair',
-    content: 'We increased our Google reviews by 300% in 2 months. The SMS automation makes it so easy for customers to leave reviews.',
+    name: 'Emily Chen',
+    role: 'Director, Artisan Bakery Co.',
+    content: 'Beautiful design, fast loading, and the online ordering system works flawlessly. Our sales increased 40% after launching the new site.',
     rating: 5,
-    avatar: 'ER',
+    avatar: 'EC',
   },
   {
     name: 'David Thompson',
-    role: 'Owner, Thompson Law Firm',
-    content: 'Love how it integrates with our existing CRM. The private feedback feature saved us from several potential negative reviews.',
+    role: 'CEO, Coastal Real Estate',
+    content: 'They understood our complex requirements perfectly. The property listing system with search filters exceeded our expectations.',
     rating: 5,
     avatar: 'DT',
   },
   {
-    name: 'Jessica Martinez',
-    role: 'Marketing Lead, Luxe Salon Group',
-    content: 'Best investment we made for our reputation management. The dashboard insights help us improve service quality continuously.',
+    name: 'Lisa Park',
+    role: 'Founder, FitLife Coaching',
+    content: 'The calendar booking integration changed my business. Clients book sessions 24/7, and everything syncs automatically. Worth every penny!',
     rating: 5,
-    avatar: 'JM',
+    avatar: 'LP',
   },
   {
-    name: 'Robert Kim',
-    role: 'Owner, Golden Wok Restaurant',
-    content: 'Simple setup, powerful results. Our star rating improved significantly, leading to 40% more customers finding us online.',
+    name: 'James Wilson',
+    role: 'Owner, Wilson & Associates Law',
+    content: 'Professional, responsive, and delivered on time. Our new website positions us as the modern, client-focused firm we wanted to be.',
     rating: 5,
-    avatar: 'RK',
+    avatar: 'JW',
   },
 ];
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 bg-white relative overflow-hidden">
+    <section id="testimonials" className="py-24 bg-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gp-warn rounded-full blur-3xl" />
@@ -64,10 +64,10 @@ export function Testimonials() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            What Our <span className="text-gp-accent">Customers</span> Say
+            What Our <span className="text-gp-accent">Clients</span> Say
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Join hundreds of businesses already transforming their online reputation
+            Real results from businesses we've helped build their online presence
           </p>
         </motion.div>
 
@@ -80,7 +80,7 @@ export function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="bg-white border-2 border-border hover:border-gp-accent transition-all h-full hover:shadow-card">
+              <Card className="bg-card border-2 border-border hover:border-gp-accent transition-all h-full hover:shadow-card">
                 <CardContent className="p-6">
                   <Quote className="w-10 h-10 text-gp-accent/30 mb-4" />
                   
