@@ -8,14 +8,15 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* GrowthPilot Brand Colors */
-    --gp-bg: 0 0% 98%; /* Light gray background */
-    --gp-text: 0 0% 10%; /* Dark text */
-    --gp-accent: 150 45% 42%; /* #3D9970 */
-    --gp-warn: 48 100% 50%; /* #FFDC00 */
-    --gp-link: 207 100% 43%; /* #0074D9 */
+    /* WebCraft Brand Colors */
+    --gp-bg: 210 20% 98%; /* Slightly blue-tinted light background */
+    --gp-text: 220 20% 15%; /* Dark blue-gray text */
+    --gp-accent: 220 90% 56%; /* Vibrant blue #2563eb */
+    --gp-accent-hover: 220 90% 48%; /* Darker blue for hover */
+    --gp-warn: 45 93% 47%; /* Warm gold #e8a600 */
+    --gp-link: 220 90% 50%; /* Link blue */
     
-    /* Semantic tokens mapped to GrowthPilot palette */
+    /* Semantic tokens */
     --background: var(--gp-bg);
     --foreground: var(--gp-text);
     
@@ -28,31 +29,32 @@ All colors MUST be HSL.
     --primary: var(--gp-accent);
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 0 0% 95%;
+    --secondary: 220 15% 92%;
     --secondary-foreground: var(--gp-text);
     
-    --muted: 0 0% 93%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 220 15% 88%;
+    --muted-foreground: 220 10% 40%;
     
     --accent: var(--gp-accent);
     --accent-foreground: 0 0% 100%;
     
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 0 0% 88%;
-    --input: 0 0% 95%;
+    --border: 220 15% 85%;
+    --input: 220 15% 95%;
     --ring: var(--gp-accent);
     
-    --radius: 1rem;
+    --radius: 0.75rem;
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 98%) 0%, hsl(0 0% 100%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(var(--gp-accent)) 0%, hsl(150 45% 35%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(210 20% 98%) 0%, hsl(220 30% 96%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(220 90% 56%) 0%, hsl(240 80% 50%) 100%);
     
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(var(--gp-accent) / 0.2);
-    --shadow-card: 0 4px 20px -2px hsl(0 0% 0% / 0.1);
+    --shadow-glow: 0 0 30px hsl(220 90% 56% / 0.25);
+    --shadow-card: 0 4px 24px -4px hsl(220 20% 20% / 0.12);
+    --shadow-hover: 0 8px 32px -4px hsl(220 20% 20% / 0.18);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -66,5 +68,17 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Utility classes for better hover states */
+@layer utilities {
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
   }
 }

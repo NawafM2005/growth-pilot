@@ -58,7 +58,7 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-24 bg-secondary/30 relative">
+    <section id="pricing" className="py-24 bg-background relative">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -67,8 +67,8 @@ export function Pricing() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Simple, <span className="text-gp-accent">Transparent</span> Pricing
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            Simple, <span className="text-primary">Transparent</span> Pricing
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Choose the package that fits your needs. All projects include free consultations.
@@ -88,13 +88,13 @@ export function Pricing() {
               <Card
                 className={`h-full relative ${
                   plan.featured
-                    ? 'bg-card border-2 border-gp-accent shadow-card'
-                    : 'bg-card border-2 border-border hover:border-gp-accent'
-                } transition-all`}
+                    ? 'bg-card border-2 border-primary shadow-glow'
+                    : 'bg-card border-2 border-border hover:border-primary hover:shadow-card'
+                } transition-all duration-300`}
               >
                 {plan.featured && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <div className="bg-gp-accent text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
+                    <div className="bg-primary text-white px-4 py-1.5 rounded-full text-sm font-semibold flex items-center gap-1 shadow-lg">
                       <Star className="w-4 h-4 fill-white" />
                       Most Popular
                     </div>
@@ -102,10 +102,10 @@ export function Pricing() {
                 )}
 
                 <CardHeader className="text-center pb-8 pt-10">
-                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                  <h3 className="text-2xl font-bold mb-2 text-foreground">{plan.name}</h3>
                   <div className="mb-4">
-                    <span className="text-5xl font-bold">{plan.price}</span>
-                    <span className="text-muted-foreground"> {plan.period}</span>
+                    <span className="text-5xl font-bold text-foreground">{plan.price}</span>
+                    <span className="text-muted-foreground ml-2">{plan.period}</span>
                   </div>
                   <p className="text-muted-foreground">{plan.description}</p>
                 </CardHeader>
@@ -114,18 +114,18 @@ export function Pricing() {
                   <ul className="space-y-3">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-gp-accent flex-shrink-0 mt-0.5" />
-                        <span className="text-sm">{feature}</span>
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-foreground">{feature}</span>
                       </li>
                     ))}
                   </ul>
 
                   <Button
-                    className={`w-full py-6 rounded-2xl font-semibold text-lg ${
+                    className={`w-full py-6 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-[1.02] ${
                       plan.featured
-                        ? 'bg-gp-accent hover:bg-gp-accent/90 text-white shadow-glow'
-                        : 'bg-secondary hover:bg-secondary/80'
-                    } transition-all hover:scale-105`}
+                        ? 'bg-primary hover:bg-gp-accent-hover text-white shadow-glow'
+                        : 'bg-secondary hover:bg-primary hover:text-white text-foreground'
+                    }`}
                   >
                     {plan.cta}
                   </Button>
@@ -143,7 +143,7 @@ export function Pricing() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-12 text-muted-foreground"
         >
-          <p className="text-lg">
+          <p className="text-lg font-medium">
             ✓ Free consultation &nbsp;•&nbsp; ✓ No hidden fees &nbsp;•&nbsp; ✓ 100% satisfaction guaranteed
           </p>
         </motion.div>

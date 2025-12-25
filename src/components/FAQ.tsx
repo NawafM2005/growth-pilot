@@ -51,7 +51,7 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="py-24 bg-secondary/30">
+    <section id="faq" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -60,8 +60,8 @@ export function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Frequently Asked <span className="text-gp-accent">Questions</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            Frequently Asked <span className="text-primary">Questions</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Everything you need to know about our web development services
@@ -80,9 +80,9 @@ export function FAQ() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card border-2 border-border rounded-xl px-6 hover:border-gp-accent transition-colors"
+                className="bg-card border-2 border-border rounded-xl px-6 hover:border-primary transition-colors data-[state=open]:border-primary"
               >
-                <AccordionTrigger className="text-left font-semibold hover:text-gp-accent">
+                <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed">
@@ -103,7 +103,7 @@ export function FAQ() {
           <p className="text-muted-foreground mb-4">Still have questions?</p>
           <a
             href="#contact"
-            className="text-gp-link hover:text-gp-link/80 font-semibold underline"
+            className="text-primary hover:text-gp-accent-hover font-semibold underline underline-offset-4 transition-colors"
           >
             Contact our team
           </a>

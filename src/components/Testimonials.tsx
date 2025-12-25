@@ -49,9 +49,9 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 bg-background relative overflow-hidden">
+    <section id="testimonials" className="py-24 bg-card relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.04]">
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gp-warn rounded-full blur-3xl" />
       </div>
 
@@ -63,8 +63,8 @@ export function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            What Our <span className="text-gp-accent">Clients</span> Say
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            What Our <span className="text-primary">Clients</span> Say
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Real results from businesses we've helped build their online presence
@@ -80,9 +80,9 @@ export function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="bg-card border-2 border-border hover:border-gp-accent transition-all h-full hover:shadow-card">
+              <Card className="bg-background border-2 border-border hover:border-primary hover:shadow-hover transition-all duration-300 h-full group">
                 <CardContent className="p-6">
-                  <Quote className="w-10 h-10 text-gp-accent/30 mb-4" />
+                  <Quote className="w-10 h-10 text-primary/30 mb-4" />
                   
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -95,11 +95,11 @@ export function Testimonials() {
                   </p>
 
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-gp-accent rounded-full flex items-center justify-center font-bold text-white">
+                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center font-bold text-white">
                       {testimonial.avatar}
                     </div>
                     <div>
-                      <div className="font-semibold">{testimonial.name}</div>
+                      <div className="font-semibold text-foreground">{testimonial.name}</div>
                       <div className="text-sm text-muted-foreground">{testimonial.role}</div>
                     </div>
                   </div>
